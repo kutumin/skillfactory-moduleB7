@@ -11,10 +11,9 @@ class field():
         self.field[a][b] = value
 
 
-class ship_1():
-    def __init__(self):
-        self.data = "■"
-
+# class ship_1():
+#     def __init__(self):
+#         self.data = "■"
 
 def show_field_user(f):
     print(" ", "| 1 |", "2 |", "3 |", "4 |", "5 |", "6 |")
@@ -23,11 +22,13 @@ def show_field_user(f):
         j += 1
         print(str(j) + ' | ' + ' | '.join(map(str, i)) + ' |')
 
+# формируем доски компьютера и игрока
 
 field_computer = field()
 field_computer_to_show = field()
 field_user = field()
 
+# расстановка 1ого трехпалубного корабля
 
 def ship3(f):
     n = randint(0, 1)
@@ -40,6 +41,7 @@ def ship3(f):
         x = randint(0, 3)
         f.setItem(x, y, "■"), f.setItem((x + 1), y, "■"), f.setItem((x + 2), y, "■")
 
+# расстановка 4-х однопалубных кораблей
 
 def ship1(f):
     i = 1
@@ -71,6 +73,7 @@ def ship1(f):
         else:
             continue
 
+# расстановка 2-х двухпалубных кораблей
 
 def ship2(f):
     n = 1
@@ -118,21 +121,13 @@ def ship2(f):
             f.setItem((x + 1), y, "■")
             n = n + 1
 
-
+# расставляем корабли
 ship3(field_computer)
 ship1(field_computer)
 ship2(field_computer)
 ship3(field_user)
 ship1(field_user)
 ship2(field_user)
-
-
-# print("Привет, поле компьютера:\n")
-# show_field_user(field_computer)
-# print("___________________________\n")
-# print("Поле игорка:\n")
-
-# show_field_user(field_user)
 
 # ход компьютера
 def hod_computer(f):
