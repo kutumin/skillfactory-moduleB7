@@ -155,7 +155,10 @@ def hod_user(f):
                     print("Введите числа")
                     continue
                 a,b = map(int, place)
-                if a | b not in range(1, 7):
+                if a not in range(1, 7):
+                    print("Введите правильные координаты из диапазона от 1 до 6 ")
+                    continue
+                if b not in range(1, 7):
                     print("Введите правильные координаты из диапазона от 1 до 6 ")
                     continue
                 x=a-1
