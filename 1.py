@@ -121,7 +121,7 @@ def ship2(f):
             f.setItem((x + 1), y, "■")
             n = n + 1
 
-# расставляем корабли
+# расставляем корабли 3,2,1 палубные
 ship3(field_computer)
 ship1(field_computer)
 ship2(field_computer)
